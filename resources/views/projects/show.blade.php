@@ -14,10 +14,9 @@
                     <h2>Create Client</h2>
                 </div>
             </div>
-            <form role="group" action="{{ route('projects.clients.store', $project->id) }}" method="post">
+            <form  action="{{ route('projects.clients.store', $project->id) }}" method="post">
                 @csrf
                 @method('POST')
-                <fieldset class="grid">
                     <input type="hidden" name="project_id" value="{{ $project->id }}">
                     <input type="text" name="name" class="form-control" id="name" placeholder="Name"
                         value="{{ old('name') }}">
@@ -32,7 +31,6 @@
                         </small>
                     @enderror
                     <input type="submit" value="Create Client" />
-                </fieldset>
             </form>
         </section>
 
