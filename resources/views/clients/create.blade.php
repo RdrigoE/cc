@@ -1,0 +1,37 @@
+<section>
+    <form action="{{route('projects.clients.store', $project->id)}}" method="post">
+        @csrf
+        @method('POST')
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Create Client</h1>
+                </div>
+            </div>
+            <div class="row">
+                <input type="hidden" name="project_id" value="{{$project->id}}">
+                <div class="col-12">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" name="name" class="form-control" id="name" placeholder="Name"
+                        value="{{old('name')}}">
+                    @error('name')
+                        <p class="text-danger">{{ $message }}</p>
+                    @enderror
+                </div>
+                <div class="col-12">
+                    <label for="phone_number" class="form-label">Phone Number</label>
+                    <input type="text" name="phone_number" class="form-control" id="phone_number"
+                        placeholder="Phone Number" value="{{old('phone_number')}}">
+                    @error('phone_number')
+                        <p class="text-danger">{{ $message }}</p>
+                    @enderror
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <button class="btn btn-primary">Create Project</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</section>
