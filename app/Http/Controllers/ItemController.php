@@ -31,9 +31,9 @@ class ItemController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'name' => ['required', 'min:1'],
-            'unit_price' => ['required', 'numeric'],
-            'quantity' => ['required', 'numeric'],
+            'name' => "required|min:1",
+            'unit_price' => "required|numeric",
+            'quantity' => "required|numeric",
         ]);
 
 

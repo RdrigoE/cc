@@ -27,7 +27,7 @@
                 @error('quantity')
                     <p class="text-danger">{{ $message }}</p>
                 @enderror
-                <input type="number" name="unit_price" class="form-control" id="unit_price" placeholder="Unit Price"
+                <input type="number" step="0.01"  name="unit_price" class="form-control" id="unit_price" placeholder="Unit Price"
                     value="{{ old('unit_price') }}">
                 @error('unit_price')
                     <p class="text-danger">{{ $message }}</p>
